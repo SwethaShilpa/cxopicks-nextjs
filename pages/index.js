@@ -58,11 +58,11 @@ export default function Home(props) {
 
     const onContinue = () => {
         setSubmitted(true);
-        if (!productName || !productDescription || !website) {
+        if (!productName || !productDescription || !website || targetIndustry.length == 0) {
             return;
         } else {
             onCancel();
-            Toast('success', "Submitted Successfully");
+            Toast('success', "Product Details Added Successfully");
         }
     }
 
@@ -184,15 +184,15 @@ export default function Home(props) {
                                     <label className="form-label">Product Deployment</label>
                                     <div>
                                         <div class="form-check form-check-inline me-5 ps-0">
-                                            <input class="form-check-input" checked={deployment.find((ch) => ch == "cloud")}  onChange={handleChange} type="checkbox" id="inlineCheckbox1" value="cloud" />
+                                            <input class="form-check-input" onChange={handleChange} type="checkbox" id="inlineCheckbox1" value="cloud" checked={deployment.find((ch) => ch == "cloud")} />
                                             <label class="form-check-label" for="inlineCheckbox1">Cloud</label>
                                         </div>
                                         <div class="form-check form-check-inline me-5 ps-0">
-                                            <input class="form-check-input" checked={deployment.find((ch) => ch == "hosted")}  onChange={handleChange} type="checkbox" id="inlineCheckbox2" value="hosted" />
+                                            <input class="form-check-input" onChange={handleChange} type="checkbox" id="inlineCheckbox2" value="hosted" checked={deployment.find((ch) => ch == "hosted")} />
                                             <label class="form-check-label" for="inlineCheckbox2">Hosted</label>
                                         </div>
                                         <div class="form-check form-check-inline me-5 ps-0">
-                                            <input class="form-check-input" checked={deployment.find((ch) => ch == "selfHosted")}  onChange={handleChange} type="checkbox" id="inlineCheckbox3" value="selfHosted"/>
+                                            <input class="form-check-input" onChange={handleChange} type="checkbox" id="inlineCheckbox3" value="selfHosted" checked={deployment.find((ch) => ch == "selfHosted")}/>
                                             <label class="form-check-label" for="inlineCheckbox3">Self Hosted</label>
                                         </div>
                                     </div>

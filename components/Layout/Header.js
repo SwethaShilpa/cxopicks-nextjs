@@ -5,11 +5,10 @@ import { useState } from 'react';
 export default function Header() {
   const [searchText, setSearchText] = useState("");
 
-    return (
-      <>
+  return (
+    <>
       <div className="top_header_bg"></div>
-      <div className="topbar-header">
-        
+      <div className="topbar-header">       
         <nav className="navbar top-navbar">
           <div className="navbar-leftside">
             <div className="navbar-header">
@@ -72,6 +71,6 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      </>
-    );
+    </>
+  );
 }
